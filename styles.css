@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planet Bumi</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .earth {
+      width: 50vw;
+      height: 50vw;
+      max-width: 800px;
+      max-height: 800px;
+      background-image: url("earth.png");
+      background-size: cover;
+      border-radius: 50%;
+      animation: rotateEarth 10s linear infinite;
+      cursor: pointer;
+      position: relative;
+    }
+
+    /* Pin untuk Lokasi Negara */
+    .pin {
+      position: absolute;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .netherlands { top: 42%; left: 42%; background-color: #00ff37; }
+    .belgium { top: 44%; left: 41%; background-color: #5c228b; }
+    .austria { top: 48%; left: 46%; background-color: #ffc300; }
+    .germany { top: 44%; left: 45%; background-color: #ff5733; }
+    .sweden { top: 33%; left: 49%; background-color: #85e9d8; }
+    .finland { top: 33%; left: 53%; background-color: #0805a3; }
+    .denmark { top: 40%; left: 45%; background-color: #5499c7; }
+    .norway { top: 35%; left: 45%; background-color: #e748c5; }
+    .uk { top: 40%; left: 38%; background-color: #f4d03f; }
+
+    .side-image {
+      width: 30%;
+      height: auto;
+      margin-left: 20px;
+    }
+
+    .moon {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      animation: orbitMoon 5s linear infinite;
+      transform-origin: 50vw 50vw;
+    }
+
+    .moon-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes rotateEarth {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes orbitMoon {
+      from {
+        transform: rotate(0deg) translateX(20vw) rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg) translateX(20vw) rotate(-360deg);
+      }
+    }
+
+    .biodata-container {
+      margin-top: 40px;
+      text-align: center;
+      padding: 20px;
+      background-color: hsl(0, 0%, 98%);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .biodata-container h2 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .biodata-table {
+      margin: 0 auto;
+      border-collapse: collapse;
+      width: 70%;
+      background-color: #fff;
+      color: #555;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .biodata-table td, .biodata-table th {
+      padding: 15px 20px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .biodata-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .biodata-table td:first-child {
+      font-weight: bold;
+      text-align: left;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    .biodata-table td {
+      text-align: left;
+    }
+
+    .biodata-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .biodata-table tr:hover {
+      background-color: #eaeaea;
+    }
+
+    .biodata-table td:last-child {
+      color: #444;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="earth">
+      <!-- Pin untuk Lokasi Negara -->
+      <div class="pin netherlands"></div>
+      <div class="pin belgium"></div>
+      <div class="pin germany"></div>
+      <div class="pin austria"></div>
+      <div class="pin sweden"></div>
+      <div class="pin finland"></div>
+      <div class="pin denmark"></div>
+      <div class="pin norway"></div>
+      <div class="pin uk"></div>
+    </div>
+    <div class="moon">
+      <img src="your-photo.jpg" alt="Your Photo" class="moon-image" />
+    </div>
+    <img src="Adode 777.png" alt="Gambar Samping" class="side-image" />
+  </div>
+
+  <!-- Tabel Biodata -->
+  <div class="biodata-container">
+    <h2>Biodata</h2>
+    <table class="biodata-table">
+      <tr>
+        <td>Nama Lengkap</td>
+        <td>Rehagel Reisa</td>
+      </tr>
+      <tr>
+        <td>NIM</td>
+        <td>122230026</td>
+      </tr>
+      <tr>
+        <td>Prodi</td>
+        <td>Teknik Geomatika</td>
+      </tr>
+      <tr>
+        <td>Tempat dan Tanggal Lahir</td>
+        <td>Lampung, 12 September 2004</td>
+      </tr>
+      <tr>
+        <td>Jenis Kelamin</td>
+        <td>Laki Laki</td>
+      </tr>
+      <tr>
+        <td>Alamat</td>
+        <td>Green Wisata Bekasi</td>
+      </tr>
+      <tr>
+        <td>Nomor Telepon HP</td>
+        <td>082278222721</td>
+      </tr>
+      <tr>
+        <td>Alamat Email</td>
+        <td>rehagelreisa96@gmail.com</td>
+      </tr>
+      </tr>
+        <td>Dream</td>
+        <td>Bisa bekerja di negara yang saya tandai pada bumi tersebut, Mengembangkan diri dalam bidang Teknik Geomatika, Berkontribusi pada proyek - proyek global, dan menjadi bagian dari inovasi teknologi yang bermanfaat bagi dunia 
+      </tr>
+    </table>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const earth = document.querySelector(".earth");
+      let isStopped = false;
+
+      function toggleRotation() {
+        if (isStopped) {
+          earth.style.animationPlayState = "running";
+          isStopped = false;
+        } else {
+          earth.style.animationPlayState = "paused";
+          isStopped = true;
+        }
+      }
+
+      earth.addEventListener("click", function () {
+        toggleRotation();
+      });
+    });
+  </script>
+</body>
+</html>
